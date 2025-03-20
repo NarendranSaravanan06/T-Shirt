@@ -1,0 +1,60 @@
+.variant-selector {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: white;
+    box-shadow: 0px -2px 10px rgba(0, 0, 0, 0.2);
+    padding: 16px;
+    animation: slideUp 0.3s ease-in-out;
+}
+
+@keyframes slideUp {
+    from {
+        transform: translateY(100%);
+    }
+    to {
+        transform: translateY(0);
+    }
+}
+
+.modal-content {
+    text-align: center;
+}
+
+.option-group {
+    margin-bottom: 10px;
+}
+
+.options button {
+    margin: 5px;
+    padding: 10px 15px;
+    border: 1px solid #ddd;
+    background: #f8f8f8;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.options button.selected {
+    background: #000;
+    color: white;
+}
+
+.actions {
+    margin-top: 15px;
+}
+
+.cancel {
+    background: #ccc;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+}
+
+.confirm {
+    background: #ff4c4c;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+}

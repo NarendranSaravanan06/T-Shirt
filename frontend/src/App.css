@@ -1,0 +1,21 @@
+/* Main content area */
+.main-content {
+    margin-left: 300px; /* Adjust based on sidebar width */
+    margin-top: 50px; /* Adjust based on header height */
+    padding: 20px;
+    transition: margin 0.3s ease-in-out;
+}
+
+/* Adjust when sidebar is closed */
+.sidebar-container.closed + .main-content {
+    margin-left: 50px; /* When sidebar is collapsed */
+}
+
+/* Ensure footer does not overlap */
+.footer {
+    margin-left: 250px;
+}
+
+.sidebar-container.closed + .footer {
+    margin-left: 50px;
+}

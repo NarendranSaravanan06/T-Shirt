@@ -1,0 +1,90 @@
+/* Global Styles */
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f5f5f5;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+/* Page Container */
+.products-page {
+    max-width: 1300px;
+    margin: auto;
+    padding: 40px 20px;
+}
+
+/* Title */
+h1 {
+    text-align: center;
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #222;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+/* Search & Filter Section */
+.search-filter-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-bottom: 30px;
+}
+
+/* Input & Dropdowns */
+.search-filter-container input,
+.search-filter-container select {
+    padding: 12px 15px;
+    font-size: 1rem;
+    border: none;
+    border-radius: 8px;
+    background: #fff;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    transition: 0.3s ease-in-out;
+    outline: none;
+}
+
+.search-filter-container select:hover,
+.search-filter-container input:focus {
+    transform: scale(1.05);
+}
+
+/* Apply Filters Button */
+.search-filter-container button {
+    padding: 12px 18px;
+    background: linear-gradient(45deg, #ff4e50, #f9d423);
+    color: white;
+    font-size: 1rem;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: 0.3s ease-in-out;
+}
+
+.search-filter-container button:hover {
+    transform: scale(1.1);
+    background: linear-gradient(45deg, #f9d423, #ff4e50);
+}
+
+/* Product Grid */
+.products-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center; /* Center items when there's only one */
+    align-items: center;
+    padding: 20px;
+}
+
+/* Ensure product cards have a max-width */
+
+
+@media (max-width: 768px) {
+    .products-grid {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    }
+}

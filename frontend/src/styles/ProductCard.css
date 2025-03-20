@@ -1,0 +1,75 @@
+.product-card {
+    background: white;
+    border-radius: 10px;
+    padding: 15px;
+    text-align: center;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
+    transition: 0.3s ease-in-out;
+    width: 250px; /* Fixed width */
+    height: 400px; /* Fixed height so content doesn't shift */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    overflow: hidden;
+}
+
+.product-card:hover {
+    transform: scale(1.05);
+}
+
+/* Image container to ensure size remains constant */
+.product-image-container {
+    width: 200px; /* Fixed container width */
+    height: 200px; /* Fixed container height */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #f0f0f0; /* Placeholder for empty images */
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.product-image {
+    width: 100%;
+    height: 100%;
+    object-fit: contain; /* Ensure full image is visible without distortion */
+}
+
+/* Ensure title and description don’t push content */
+.product-card h3 {
+    font-size: 1.1rem;
+    margin: 10px 0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    width: 90%;
+}
+
+.product-card p {
+    font-size: 0.9rem;
+    color: #555;
+    margin: 5px 0;
+    width: 90%;
+    text-align: center;
+}
+
+.button-group {
+    margin-top: auto;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.price-before{
+    text-decoration: line-through;
+    color: #555;
+}
+.price-after{
+    color: #f00;
+    font-weight: bold;
+    
+}
+.price-discount{
+    font-style: italic;
+}

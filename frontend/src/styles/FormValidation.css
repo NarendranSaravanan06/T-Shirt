@@ -1,0 +1,13 @@
+.error-message {
+    color: red;
+    font-size: 12px;
+    margin-top: 2px;
+    min-height: 18px; /* Reserve space to prevent shifting */
+    transition: opacity 0.2s ease-in-out;
+}
+
+.hidden {
+    visibility: hidden; /* Keeps layout stable even when empty */
+    opacity: 0;
+    height: 0;
+}

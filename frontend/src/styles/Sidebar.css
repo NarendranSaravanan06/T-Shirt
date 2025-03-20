@@ -1,0 +1,90 @@
+/* Sidebar Container */
+.sidebar-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    display: flex;
+    transition: transform 0.3s ease-in-out;
+    z-index: 1000;
+  }
+  
+  /* Sidebar */
+  .sidebar {
+    width: 250px;
+    height: 100vh;
+    background-color: #232f3e;
+    color: white;
+    padding-top: 50px; /* Push content below the button */
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  /* Closed Sidebar - Peeking (Only 50px visible) */
+  .sidebar-container.closed {
+    transform: translateX(-200px);
+  }
+  
+  /* Open Sidebar - Fully Visible */
+  .sidebar-container.open {
+    transform: translateX(0);
+  }
+  
+  /* Sidebar List */
+  .sidebar ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .sidebar ul li {
+    padding: 15px;
+  }
+  
+  .sidebar ul li a {
+    text-decoration: none;
+    color: white;
+    font-size: 16px;
+    display: block;
+  }
+  
+  .sidebar ul li a:hover {
+    background-color: #37475a;
+  }
+  
+  /* Sidebar Toggle Button */
+  .sidebar-toggle {
+    width: 50px;
+    position: absolute;
+    top: 10px;
+    right: 0px; /* Positioned just outside sidebar */
+    background-color: #232f3e;
+    color: white;
+    border: none;
+    font-size: 18px;
+    padding: 8px 12px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background 0.3s ease-in-out;
+  }
+  
+  .sidebar-toggle:hover {
+    background-color: #37475a;
+  }
+  .sidebar-header {
+    width: 150px;
+    position: absolute;
+    top: 10px;
+    right: -175px; /* Positioned just outside sidebar */
+    color: rgb(124, 124, 124);
+    border: none;
+    font-size: 18px;
+    padding: 8px 12px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background 0.3s ease-in-out;
+
+    font-size: 16px;
+    font-weight: bold;
+    color: white;
+    text-decoration: none;
+  }
+  

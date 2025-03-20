@@ -1,0 +1,134 @@
+/* Main Cart Page Layout */
+.cart-page {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    min-height: 100vh;
+    padding: 20px;
+    box-sizing: border-box;
+    background: #f8f9fa;
+}
+
+/* Cart Main Section */
+.cart-main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-width: 1100px;
+    padding: 20px;
+    margin: 90px auto 60px auto; /* Ensures space for header & footer */
+}
+
+/* Ensuring the content does not overlap */
+.cart-container {
+    width: 100%;
+    max-width: 900px;
+    background: white;
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.15);
+    margin: 20px 0;
+    transition: all 0.3s ease-in-out;
+}
+
+/* Header */
+.cart-header {
+    text-align: center;
+    font-size: 28px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+/* Cart Items */
+.cart-items {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* Individual Cart Item Box */
+.cart-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 20px;
+    border-radius: 12px;
+    background: white;
+    box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+    border-left: 6px solid #007bff;
+}
+
+.cart-item:hover {
+    transform: scale(1.02);
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Product Details */
+.cart-item-details {
+    flex: 1;
+}
+
+.cart-item-details p {
+    margin: 5px 0;
+    font-size: 16px;
+    color: #444;
+}
+
+
+/* Cart Summary & Total */
+.cart-summary {
+    text-align: center;
+    margin-top: 30px;
+    padding: 15px;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    font-size: 20px;
+    font-weight: bold;
+    color: #222;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .cart-container {
+        width: 95%;
+        margin-top: 90px;
+    }
+
+    .cart-item {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+    }
+
+    .quantity-control {
+        justify-content: flex-start;
+    }
+}
+
+.cart-item-image img{
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+@media (max-width: 600px) {
+    .cart-container {
+        width: 100%;
+        padding: 15px;
+    }
+
+    .cart-item {
+        padding: 15px;
+    }
+
+    .quantity-control button {
+        width: 40px;
+        height: 40px;
+    }
+}

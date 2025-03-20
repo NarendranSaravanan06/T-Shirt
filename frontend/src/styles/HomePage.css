@@ -1,0 +1,96 @@
+/* Home Page - Fullscreen Centered Layout */
+.home-page {
+    text-align: center;
+    padding: 60px 20px;
+    background: linear-gradient(to bottom, #111, #222);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Brand Heading with Neon Effect */
+.home-page h1 {
+    font-size: 3.5rem;
+    font-weight: 700;
+    color: white;
+    margin-bottom: 30px;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.7);
+    transition: 0.3s ease-in-out;
+}
+
+.home-page h1:hover {
+    text-shadow: 0 0 20px rgba(255, 255, 255, 1);
+    transform: scale(1.05);
+}
+
+/* Product Grid - Modern Layout */
+.home-products-grid {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    max-width: 1100px;
+    width: 100%;
+    padding: 20px;
+}
+
+/* Product Card with Glassmorphism Effect */
+.home-product-card {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
+    box-shadow: 0px 6px 20px rgba(255, 255, 255, 0.15);
+    padding: 15px;
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.home-product-card:hover {
+    transform: translateY(-10px) scale(1.05);
+    box-shadow: 0px 8px 25px rgba(255, 255, 255, 0.3);
+}
+
+/* View All Products Button - Neon Effect */
+.home-view-all-btn {
+    width: 300px;
+    margin-top: 40px;
+    padding: 14px 30px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    cursor: pointer;
+    background: linear-gradient(45deg, #ff004f, #ff7300);
+    color: white;
+    border: none;
+    border-radius: 50px;
+    box-shadow: 0px 0px 10px rgba(255, 0, 79, 0.5);
+    transition: all 0.3s ease-in-out;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.home-view-all-btn:hover {
+    background: linear-gradient(45deg, #ff7300, #ff004f);
+    box-shadow: 0px 0px 20px rgba(255, 115, 0, 0.8);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .home-page h1 {
+        font-size: 2.5rem;
+    }
+
+    .home-products-grid {
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+    }
+
+    .home-view-all-btn {
+        font-size: 1rem;
+        padding: 12px 25px;
+    }
+}

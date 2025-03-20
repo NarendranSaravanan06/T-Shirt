@@ -1,0 +1,162 @@
+/* 🌟 Add Product Page - Complete Redesign 🌟 */
+.add-product-container {
+    max-width: 900px;
+    margin: 50px;
+    padding: 40px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    backdrop-filter: blur(20px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    animation: fadeIn 0.7s ease-in-out;
+    justify-self: center;
+}
+
+/* Page Title */
+.add-product-container h2 {
+    text-align: center;
+    font-size: 28px;
+    font-weight: bold;
+    color: #ffffff;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    background: linear-gradient(45deg, #ff8a00, #e52e71);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 25px;
+}
+
+/* Form Layout */
+.add-product-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+    justify-content: center;  
+}
+
+/* Input Fields */
+input, textarea, select {
+    width: 96%;
+    margin: 4px;
+    padding: 14px;
+    font-size: 16px;
+    border-radius: 8px;
+    border: none;
+    border: #e52e71 2px solid;
+    background: rgba(255, 255, 255, 0.15);
+    color: rgb(0, 0, 0);
+    transition: 0.3s ease-in-out;
+}
+
+input:focus, textarea:focus, select:focus {
+    background: rgba(255, 255, 255, 0.3);
+    outline: none;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+}
+
+/* Variant Section */
+.variant-container {
+    padding: 20px;
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.1);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    position: relative;
+    margin-bottom: 20px;
+    
+    
+}
+
+.variant-container h4 {
+    color: #ff8a00;
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+/* Size Section */
+.size-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    border: #e52e71 2px solid; 
+    justify-content: center;
+    border-radius: 10px;
+    padding: 10px;
+}
+
+/* Buttons */
+.add-product-container button {
+    padding: 14px;
+    font-size: 16px;
+    font-weight: bold;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+    text-transform: uppercase;
+    width: 400px;
+}
+
+/* Submit Button */
+.submit-btn {
+    background: linear-gradient(45deg, #ff8a00, #e52e71);
+    color: white;
+    box-shadow: 0 5px 15px rgba(255, 138, 0, 0.3);
+}
+
+.submit-btn:hover {
+    transform: scale(1.05);
+}
+
+/* Add Variant Button */
+.add-variant-btn {
+    background: linear-gradient(45deg, #00c6ff, #0072ff);
+    color: white;
+    box-shadow: 0 5px 15px rgba(0, 198, 255, 0.3);
+    width: 100%;
+}
+
+.add-variant-btn:hover {
+    transform: scale(1.05);
+}
+
+/* Remove Variant Button */
+.remove-variant-btn {
+    background: rgba(255, 0, 0, 0.8);
+    color: white;
+    box-shadow: 0 5px 15px rgba(255, 0, 0, 0.3);
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    padding: 8px 12px;
+    font-size: 14px;
+}
+
+.remove-variant-btn:hover {
+    background: rgba(255, 0, 0, 1);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .add-product-container {
+        width: 90%;
+        padding: 30px;
+    }
+
+    .size-container {
+        flex-direction: column;
+    }
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

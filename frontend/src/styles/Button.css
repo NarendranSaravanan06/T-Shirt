@@ -1,0 +1,67 @@
+/* Default button styles */
+.btn {
+  border: none;
+  cursor: pointer;
+  font-weight: 500;
+  transition: background 0.3s, transform 0.2s;
+  border-radius: 5px;
+  padding: 10px 15px;
+  
+}
+
+/* Button colors */
+.primary {
+  background-color: #007bff;
+  color: white;
+}
+
+.secondary {
+  background-color: #6c757d;
+  color: white;
+}
+
+.success {
+  background-color: #28a745;
+  color: white;
+}
+
+.danger {
+  background-color: #dc3545;
+  color: white;
+}
+
+.warning {
+  background-color: #ffc107;
+  color: black;
+}
+
+/* Button sizes */
+.small {
+  font-size: 12px;
+  padding: 5px 10px;
+}
+
+.medium {
+  font-size: 14px;
+  padding: 10px 15px;
+}
+
+.large {
+  font-size: 16px;
+  padding: 15px 20px;
+}
+
+/* Disabled button */
+.btn:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+/* Hover & active effects */
+.btn:hover:not(:disabled) {
+  opacity: 0.9;
+}
+
+.btn:active:not(:disabled) {
+  transform: scale(0.98);
+}
