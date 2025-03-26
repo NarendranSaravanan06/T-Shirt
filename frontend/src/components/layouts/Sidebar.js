@@ -1,12 +1,10 @@
 import React, { useState, useEffect } from "react";
 import "../../styles/Sidebar.css";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import RoleService from '../../services/roleService'
-const Sidebar = () => {
+const Sidebar = ({setIsLoggedIn,isLoggedIn}) => {
     const [isOpen, setIsOpen] = useState(false);
     const [isAdmin, setIsAdmin] = useState(false);
-    const [isLoggedIn, setIsLoggedIn] = useState(false);
-    const navigate = useNavigate();
 
     useEffect(() => {
         const token = localStorage.getItem('authToken');
@@ -37,7 +35,7 @@ const Sidebar = () => {
             <div className="sidebar">
                 <ul>
 
-                    {/* {isLoggedIn ? (
+                    {isLoggedIn ? (
                         !isAdmin ? (
                             <>
                                 <li><a href="/">Home</a></li>
@@ -49,17 +47,11 @@ const Sidebar = () => {
                         ) : (
                             <li><a href="/admin">Admin</a></li>
                         )
-                    ) : <li><a href="/products">Products</a></li>
-                    } */}
-
-
-                    <li><a href="/">Home</a></li>
-                    <li><a href="/orders">Orders</a></li>
-                    <li><a href="/offers">Offers</a></li>
-                    <li><a href="/cart">Cart</a></li>
-                    <li><a href="/favorite">Favorites</a></li>
-                    <li><a href="/admin">Admin</a></li>
+                    ) : <>
                     <li><a href="/products">Products</a></li>
+                    <li><a href="/login">Login</a></li>
+                    </>
+                    }
 
                 </ul>
             </div>

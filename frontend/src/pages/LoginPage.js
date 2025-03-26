@@ -8,7 +8,7 @@ import AuthService from "../services/authService";
 import { showToast } from "../utils/toastify"; // ✅ Import Toastify
 import "../styles/AuthPage.css";
 import RoleService from "../services/roleService";
-const LoginPage = () => {
+const LoginPage = ({setIsLoggedIn}) => {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [errors, setErrors] = useState({});
@@ -29,6 +29,7 @@ const LoginPage = () => {
             const isAdmin = await RoleService.getRole();
 
             if (response.token) {
+                setIsLoggedIn(true);
                 showToast("Login successful!", "success"); // ✅ Show success toast
                 setTimeout(() => {
                     if (isAdmin) {

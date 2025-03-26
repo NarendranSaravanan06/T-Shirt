@@ -10,7 +10,7 @@ const AdminPage = () => {
       <h1>Admin Page</h1>
       <Button label="Add Product" onClick={()=>navigate('/admin/add-product')} color='red' size='medium'></Button>
       <Button label="Edit Product" onClick={()=>navigate('/admin/edit-product')} color='red' size='medium'></Button>
-      <Button label="Add Category"  color='red' size='medium'></Button>
+      <Button label="Add Category" onClick={()=>navigate('/admin/add-category')} color='red' size='medium'></Button>
       <Button label="Edit Category"  color='red' size='medium'></Button>
       <Button label="Add Offer"  color='red' size='medium'></Button>
       <Button label="Edit Offer"  color='red' size='medium'></Button>

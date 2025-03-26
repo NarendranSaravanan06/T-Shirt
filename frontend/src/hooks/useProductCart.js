@@ -6,11 +6,15 @@ const useProductCart = (product, selectedColor, selectedSize) => {
     const [isInCart, setIsInCart] = useState(false);
     const [cartQuantity, setCartQuantity] = useState(0);
     const [loadingCart, setLoadingCart] = useState(true);
-
+    const [isLoggedIn, setIsLoggedIn] = useState(false);
     useEffect(() => {
-        if (product && selectedColor && selectedSize) {
-            checkIfInCart();
+        setIsLoggedIn(localStorage.getItem("authToken"));
+        if (isLoggedIn) {
+            if (product && selectedColor && selectedSize) {
+                checkIfInCart();
+            }
         }
+
     }, [product, selectedColor, selectedSize]);
 
     const checkIfInCart = async () => {

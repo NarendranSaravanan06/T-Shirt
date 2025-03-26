@@ -81,7 +81,7 @@ const ProductsPage = () => {
             <div className="products-grid">
     {filteredProducts.map((product) =>
         product.variants.map((variant, index) => (
-            <ProductCard key={`${product.productId}-${index}`} product={product} variant={variant} />
+            <ProductCard key={`${product.productId}-${index}`} product={product} variant={variant}/>
         ))
     )}
 </div>

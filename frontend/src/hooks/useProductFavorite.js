@@ -5,27 +5,31 @@ import { showToast } from "../utils/toastify";
 const useProductFavorite = (productId, color) => {
     const [isFavorite, setIsFavorite] = useState(false);
     const [loading, setLoading] = useState(true);
-
+    const [isLoggedIn, setIsLoggedIn] = useState(false);
     useEffect(() => {
-        const checkIfFavorite = async () => {
-            try {
-                setLoading(true);
-                const favoriteData = await FavoriteService.getFavoriteById(); // ✅ Auth token handles userId
+        setIsLoggedIn(localStorage.getItem("authToken"));
+        if (isLoggedIn) {
+            const checkIfFavorite = async () => {
+                try {
+                    setLoading(true);
+                    const favoriteData = await FavoriteService.getFavoriteById(); // ✅ Auth token handles userId
 
-                const isFav = favoriteData?.products?.some(fav => fav.productId === productId) && favoriteData?.products?.some(fav => fav.color === color);
-                setIsFavorite(isFav);
-            } catch (error) {
-                console.error("Error fetching favorites:", error);
-            } finally {
-                setLoading(false);
-            }
-        };
+                    const isFav = favoriteData?.products?.some(fav => fav.productId === productId) && favoriteData?.products?.some(fav => fav.color === color);
+                    setIsFavorite(isFav);
+                } catch (error) {
+                    console.error("Error fetching favorites:", error);
+                } finally {
+                    setLoading(false);
+                }
+            };
 
-        checkIfFavorite();
-    }, [productId]);    
+            checkIfFavorite();
+        }
+
+    }, [productId]);
 
     const handleFavoriteToggle = async () => {
-        
+
         try {
             if (isFavorite) {
                 await FavoriteService.removeFromFavorites({ productId, color });

@@ -4,12 +4,13 @@ import { AuthContext } from "../../contexts/AuthContext"; // ✅ Import Context
 import "../../styles/Header.css";
 import Button from "../reusables/Button";
 
-const Header = () => {
+const Header = ({setIsLoggedIn}) => {
     const { isLoggedIn, logout } = useContext(AuthContext); // ✅ Use Context
     const navigate = useNavigate();
-
+    
     const handleLogout = () => {
         logout();
+        setIsLoggedIn(false);
         navigate("/"); // ✅ Redirect to home after logout
     };
 

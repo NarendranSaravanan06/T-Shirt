@@ -11,7 +11,10 @@ const removeFromFavorites = async (favoriteData) => {
     return response.data;
 };
 const getFavoriteById = async () => {
-    const response = await axiosInstance.get(`${API_URL}`);
-    return response.data;
+        const response = await axiosInstance.get(`${API_URL}`).catch((error) => {
+            console.log(error.status);
+        })
+        return response.data;
+
 };
 export default { addToFavorites, removeFromFavorites, getFavoriteById };

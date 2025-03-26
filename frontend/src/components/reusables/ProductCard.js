@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 import "../../styles/ProductCard.css";
 import useProductFavorite from "../../hooks/useProductFavorite";
 import discountPercentCalculation from "../../utils/discountPriceCalculation";
-const ProductCard = ({ product, variant }) => {
+const ProductCard = ({ product, variant}) => {
     const navigate = useNavigate();
     const [price, setPrice] = useState({ minPrice: 0, maxPrice: 0 });
     const { isFavorite, loading, handleFavoriteToggle } = useProductFavorite(product.productId, variant.color);

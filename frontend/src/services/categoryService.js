@@ -4,10 +4,10 @@ const CategoryService = {
     // ✅ Get all categories
     getAllCategories: async () => {
         try {
-            
+
             const response = await axiosInstance.get("/categories");
             return response.data;
-            
+
         } catch (error) {
             throw error.response?.data || "Failed to fetch categories";
         }
@@ -20,6 +20,14 @@ const CategoryService = {
             return response.data;
         } catch (error) {
             throw error.response?.data || "Failed to fetch category";
+        }
+    },
+    createCategory: async (category) => {
+        try {
+            const response = await axiosInstance.post("/categories", category);
+            return response.data;
+        } catch (error) {
+            throw error.response?.data || "Failed to create category";
         }
     }
 };
