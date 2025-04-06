@@ -48,37 +48,57 @@ const LoginPage = ({setIsLoggedIn}) => {
     };
 
     return (
-        <div className="login-wrapper">
-            <div className="login-container">
-                <h2>Sign In</h2>
-                <form onSubmit={handleLogin}>
-                    <div>
-                        <Input
-                            type="email"
-                            placeholder="Enter your email"
-                            value={email}
-                            onChange={(e) => setEmail(e.target.value)}
-                        />
+        <div className="login-container">
+            <div className="login-background">
+                <div className="shape shape-1"></div>
+                <div className="shape shape-2"></div>
+                <div className="shape shape-3"></div>
+            </div>
+            <div className="login-content">
+                <div className="login-header">
+                    <h1>Sign In</h1>
+                    <p>Welcome back! Please enter your details</p>
+                </div>
+                <form className="login-form" onSubmit={handleLogin}>
+                    <div className="form-group">
+                        <label>
+                            <span>Email</span>
+                            <Input
+                                type="email"
+                                placeholder="Enter your email"
+                                value={email}
+                                onChange={(e) => setEmail(e.target.value)}
+                            />
+                        </label>
                         <FormValidator error={errors.email} />
                     </div>
 
-                    <div>
-                        <Input
-                            type="password"
-                            placeholder="Enter your password"
-                            value={password}
-                            onChange={(e) => setPassword(e.target.value)}
-                        />
+                    <div className="form-group">
+                        <label>
+                            <span>Password</span>
+                            <Input
+                                type="password"
+                                placeholder="Enter your password"
+                                value={password}
+                                onChange={(e) => setPassword(e.target.value)}
+                            />
+                        </label>
                         <FormValidator error={errors.password} />
                     </div>
 
-                    <Button label="Login" onClick={handleLogin} color="primary" size="medium" />
+                    <div className="forgot-password">
+                        <button type="button" className="text-button">Forgot password?</button>
+                    </div>
+
+                    <button type="submit" className="submit-button" onClick={handleLogin}>
+                        <span className="button-text">Sign In</span>
+                        <span className="button-loader"></span>
+                    </button>
                 </form>
 
-                <div className="register-section">
+                <div className="social-login">
                     <p>New to our store?</p>
                     <Button label="Create an account" onClick={() => navigate('/register')} color="success" size="medium" />
-
                 </div>
             </div>
         </div>
