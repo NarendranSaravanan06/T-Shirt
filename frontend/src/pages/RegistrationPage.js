@@ -41,29 +41,65 @@ const RegistrationPage = ({isAdmin}) => {
     };
 
     return (
-        <div className="login-wrapper">
-            <div className="login-container">
-                <h2>Sign Up</h2>
-                <form onSubmit={handleSignUp}>
-                    <Input type="text" placeholder="Enter your name" value={name} onChange={(e) => setName(e.target.value)} />
-                    <FormValidator error={errors.name} />
+        <div className="login-container">
+            <div className="login-background">
+                <div className="shape shape-1"></div>
+                <div className="shape shape-2"></div>
+                <div className="shape shape-3"></div>
+            </div>
+            <div className="login-content">
+                <div className="login-header">
+                    <h1>Sign Up</h1>
+                    <p>Create your account to get started</p>
+                </div>
+                <form className="login-form" onSubmit={handleSignUp}>
+                    <div className="form-group">
+                        <label>
+                            <span>Full Name</span>
+                            <Input type="text" placeholder="Enter your name" value={name} onChange={(e) => setName(e.target.value)} />
+                        </label>
+                        <FormValidator error={errors.name} />
+                    </div>
 
-                    <Input type="email" placeholder="Enter your email" value={email} onChange={(e) => setEmail(e.target.value)} />
-                    <FormValidator error={errors.email} />
+                    <div className="form-group">
+                        <label>
+                            <span>Email</span>
+                            <Input type="email" placeholder="Enter your email" value={email} onChange={(e) => setEmail(e.target.value)} />
+                        </label>
+                        <FormValidator error={errors.email} />
+                    </div>
 
-                    <Input type="text" placeholder="Enter your phone number" value={phoneNumber} onChange={(e) => setPhoneNumber(e.target.value)} />
-                    <FormValidator error={errors.phoneNumber} />
+                    <div className="form-group">
+                        <label>
+                            <span>Phone Number</span>
+                            <Input type="text" placeholder="Enter your phone number" value={phoneNumber} onChange={(e) => setPhoneNumber(e.target.value)} />
+                        </label>
+                        <FormValidator error={errors.phoneNumber} />
+                    </div>
 
-                    <Input type="password" placeholder="Enter your password" value={password} onChange={(e) => setPassword(e.target.value)} />
-                    <FormValidator error={errors.password} />
+                    <div className="form-group">
+                        <label>
+                            <span>Password</span>
+                            <Input type="password" placeholder="Enter your password" value={password} onChange={(e) => setPassword(e.target.value)} />
+                        </label>
+                        <FormValidator error={errors.password} />
+                    </div>
 
-                    <Input type="password" placeholder="Confirm password" value={checkPassword} onChange={(e) => setCheckPassword(e.target.value)} />
-                    <FormValidator error={errors.checkPassword} />
+                    <div className="form-group">
+                        <label>
+                            <span>Confirm Password</span>
+                            <Input type="password" placeholder="Confirm password" value={checkPassword} onChange={(e) => setCheckPassword(e.target.value)} />
+                        </label>
+                        <FormValidator error={errors.checkPassword} />
+                    </div>
 
-                    <Button label="Sign Up" onClick={handleSignUp} color="primary" size="medium" />
+                    <button type="submit" className="submit-button" onClick={handleSignUp}>
+                        <span className="button-text">Create Account</span>
+                        <span className="button-loader"></span>
+                    </button>
                 </form>
 
-                <div className="register-section">
+                <div className="social-login">
                     <p>Already have an account?</p>
                     <Button label="Login" onClick={() => navigate('/')} color="success" size="medium" />
                 </div>
